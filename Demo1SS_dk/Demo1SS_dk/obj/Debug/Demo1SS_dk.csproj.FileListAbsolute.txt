@@ -1,0 +1,6 @@
+c:\users\dkolartc\documents\visual studio 2013\Projects\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.exe.config
+c:\users\dkolartc\documents\visual studio 2013\Projects\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.exe
+c:\users\dkolartc\documents\visual studio 2013\Projects\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.pdb
+c:\users\dkolartc\documents\visual studio 2013\Projects\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.csprojResolveAssemblyReference.cache
+c:\users\dkolartc\documents\visual studio 2013\Projects\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.exe
+c:\users\dkolartc\documents\visual studio 2013\Projects\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.pdb
