@@ -1,0 +1,6 @@
+Z:\software\VS PROJECTS\Demo1_SoftServe\Demo1_SoftServe\bin\Debug\Demo1_SoftServe.exe.config
+Z:\software\VS PROJECTS\Demo1_SoftServe\Demo1_SoftServe\bin\Debug\Demo1_SoftServe.exe
+Z:\software\VS PROJECTS\Demo1_SoftServe\Demo1_SoftServe\bin\Debug\Demo1_SoftServe.pdb
+Z:\software\VS PROJECTS\Demo1_SoftServe\Demo1_SoftServe\obj\Debug\Demo1_SoftServe.csprojResolveAssemblyReference.cache
+Z:\software\VS PROJECTS\Demo1_SoftServe\Demo1_SoftServe\obj\Debug\Demo1_SoftServe.exe
+Z:\software\VS PROJECTS\Demo1_SoftServe\Demo1_SoftServe\obj\Debug\Demo1_SoftServe.pdb
