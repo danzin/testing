@@ -14,11 +14,17 @@ namespace Demo1_SoftServe
         private string phone;
         private string money;
         private string address;
+        private string project;
         //Creates the employee by name only
         public Employee(string name)
         {
             this.name = name;
 
+        }
+        public string Project
+        {
+            get { return this.project; }
+            set { this.project = value; }
         }
         public string Phone
         {
@@ -52,6 +58,7 @@ namespace Demo1_SoftServe
         {
             var sb = new StringBuilder();
             sb.AppendLine(String.Format("Emplyee's name {0}", this.Name));
+
 
             return sb.ToString();
         }

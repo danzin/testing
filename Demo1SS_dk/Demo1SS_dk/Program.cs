@@ -22,87 +22,186 @@ namespace Demo1_SoftServe
             Employee Senior = new Employee("Senior");
             Employee Junior = new Employee("Junior");
             // Hardcoded info about the employees
-            CEO.Money = "322381556";
-            CEO.Phone = "123123123123";
-            CEO.Email = "imtheCEO@gmail.com";
-            CEO.Address = "8 CEO str.";
-            DD.Email = "dd.@gmail.com";
-            DD.Address = "5 directors str.";
-            DD.Money = "451451";
-            DD.Phone = "7654";
-            ProMan.Email = "manager@gmail.com";
-            ProMan.Money = "156165";
-            ProMan.Address = "7 manager's str.";
-            ProMan.Phone = "343254";
-            TeamLead.Email = "leader@gmail.com";
-            TeamLead.Money = "2895";
-            TeamLead.Address = "6 leader's str.";
-            TeamLead.Phone = "23423423";
-            // Create the tree from the sample
+
 
             //Prints the tree 
             tree.PrintDFS();
             // Perfrom tree manipulations
-            Console.WriteLine("To add delivery director press 1 \n" + "To add project manager  press 2 \n" + "To add team leader press 3 \n" + "To add senior press 4 \n"
-                    + "To add intermediat press 5 \n" + "To add junior press 6 \n");
-            int opts = int.Parse(Console.ReadLine());
-            switch (opts)
+            int opts;
+            do
             {
-                case 1:
-                    Console.WriteLine("name of the delivery director: ");
-                    string name = Console.ReadLine();
-                    //Gets the root and adds a child to it
-                    tree.Root.AddChild(new TreeNode<Employee>(new Employee(name)));
-                    tree.PrintDFS();
-                    break;
-                case 2:
-                    if (tree.Root.ChildrenCount == 0)
-                    {
-                        Console.WriteLine("The Project manager needs a Delivery director, you need to add one: ");
-                        Console.WriteLine("name: ");
-                        name = Console.ReadLine();
-                        //Gets the root and adds a child to it
-                        tree.Root.AddChild(new TreeNode<Employee>(new Employee(name)));
-                        tree.PrintDFS();
-                        Console.WriteLine("There is a DD now, we can proceed...");
 
-                    }
-                    Console.WriteLine("name of project manager: ");
-                    string tname = Console.ReadLine();
-                    //Gets the root's first child and adds a child to it
-                    tree.Root.GetChild(0).AddChild(new TreeNode<Employee>(new Employee(tname)));
-                    tree.PrintDFS();
-                    break;
-                case 3:
-                    //checks for CEO>DD>Project manager
-                     if (tree.Root.ChildrenCount == 0)
-                        {
-                            Console.WriteLine("You cant add a team leader without the rest of the structure ");
-                            Console.WriteLine("name: ");
-                            name = Console.ReadLine();
+                    Console.WriteLine("To add delivery director press 1 \n" + "To add project manager  press 2 \n" + "To add team leader press 3 \n" + "To add senior press 4 \n"
+                            + "To add intermediate press 5 \n" + "To add junior press 6 \n" + "To view information about the employees , press 7" );
+                     opts = int.Parse(Console.ReadLine());
+                    switch (opts)
+                    {
+                        //delivery director
+                        case 1:
+                            Console.WriteLine("name of the delivery director: ");
+                            string name = Console.ReadLine();
                             //Gets the root and adds a child to it
                             tree.Root.AddChild(new TreeNode<Employee>(new Employee(name)));
+                            Console.WriteLine("Would u like to add additional information about him? \n y/n");
+                            string af = Console.ReadLine().ToUpper(); ;
+                            if (af == "Y")
+                            {
+                                Console.WriteLine("Address: ");
+                                tree.Root.GetChild(0).Value.Address = Console.ReadLine();
+                                Console.WriteLine("Phone: ");
+                                tree.Root.GetChild(0).Value.Phone = Console.ReadLine();
+                                Console.WriteLine("Salary: ");
+                                tree.Root.GetChild(0).Value.Money = Console.ReadLine();
+                            }
                             tree.PrintDFS();
-                            Console.WriteLine("There is a DD now, we can proceed to  a project manager ");
+                            break;
+                        case 2: //project manager
+                            if (tree.Root.ChildrenCount == 0)
+                            {
+                                Console.WriteLine("The Project manager needs a Delivery director, you need to add one: ");
+                                Console.WriteLine("name: ");
+                                name = Console.ReadLine();
+                                //Gets the root and adds a child to it
+                                tree.Root.AddChild(new TreeNode<Employee>(new Employee(name)));
+                                Console.WriteLine("Would u like to add additional information about him? \n y/n");
+                                string arf = Console.ReadLine().ToUpper(); ;
+                                if (arf == "Y")
+                                {
+                                    Console.WriteLine("Address: ");
+                                    tree.Root.GetChild(0).Value.Address = Console.ReadLine();
+                                    Console.WriteLine("Phone: ");
+                                    tree.Root.GetChild(0).Value.Phone = Console.ReadLine();
+                                    Console.WriteLine("Salary: ");
+                                    tree.Root.GetChild(0).Value.Money = Console.ReadLine();
+                                }
+                                tree.PrintDFS();
+
+                                Console.WriteLine("There is a DD now, we can proceed...");
+                                Console.WriteLine("Name of project manager: ");
+                                string tname = Console.ReadLine();
+                                //Gets the root's first child and adds a child to it
+                                tree.Root.GetChild(0).AddChild(new TreeNode<Employee>(new Employee(tname)));
+                                tree.PrintDFS();
+                            }
+
+                             else{
+                                Console.WriteLine("Name of project manager: ");
+                                  name = Console.ReadLine();
+                                //Gets the root's first child and adds a child to it
+                                tree.Root.GetChild(0).AddChild(new TreeNode<Employee>(new Employee(name)));
+                                tree.PrintDFS();
+                            }
+                            break;
+                        case 3: //team leader 
+                                //checka for a DD
+                            if (tree.Root.ChildrenCount == 0)
+                            {
+                                Console.WriteLine("There is no delivery director and a project manager, and they must be there...\n Name of DD: ");
+                                name = Console.ReadLine();
+                                //Gets the root and adds a DD to it
+                                tree.Root.AddChild(new TreeNode<Employee>(new Employee(name)));
+                                Console.WriteLine("Would u like to add additional information about him? \n y/n");
+                                //DD's details
+                                af = Console.ReadLine().ToUpper(); ;
+                                if (af == "Y")
+                                {
+                                    Console.WriteLine("Address: ");
+                                    tree.Root.GetChild(0).Value.Address = Console.ReadLine();
+                                    Console.WriteLine("Phone: ");
+                                    tree.Root.GetChild(0).Value.Phone = Console.ReadLine();
+                                    Console.WriteLine("Salary: ");
+                                    tree.Root.GetChild(0).Value.Money = Console.ReadLine();
+                                }
+                                Console.WriteLine("There is a DD now, we can proceed...");
+                                Console.WriteLine("Name of project manager: ");
+                              string  tname = Console.ReadLine();
+                                //Gets the root's first child and adds a child to it
+                                tree.Root.GetChild(0).AddChild(new TreeNode<Employee>(new Employee(tname)));
+                                tree.PrintDFS();
+                                Console.WriteLine("We are adding a team leader now: ");
+                                name = Console.ReadLine();
+                                tree.Root.GetChild(0).GetChild(0).AddChild(new TreeNode<Employee>(new Employee(name)));
+                                Console.WriteLine("would you like to add additional information about the team lead? \n y/n");
+                                string arf = Console.ReadLine().ToUpper();
+                                if (arf == "Y")
+                                {
+                                    Console.WriteLine("Address: ");
+                                    tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Address = Console.ReadLine();
+                                    Console.WriteLine("Phone: ");
+                                    tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Phone = Console.ReadLine();
+                                    Console.WriteLine("Salary: ");
+                                    tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Money = Console.ReadLine();
+                                    Console.WriteLine("Project: ");
+                                    tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Project = Console.ReadLine();
+                                }
+                                tree.PrintDFS();
+
+                        }else
+                        {
+                            tree.PrintDFS();
+                            Console.WriteLine("We are adding a team leader now: ");
                             name = Console.ReadLine();
-                            tree.Root.GetChild(0).AddChild(new TreeNode<Employee>(new Employee(name)));
-                            Console.WriteLine("We have a project manager. Now we add the team leader: \n Name: ");
-                            name = Console.
+                            tree.Root.GetChild(0).GetChild(0).AddChild(new TreeNode<Employee>(new Employee(name)));
+                            Console.WriteLine("would you like to add additional information about the team lead? \n y/n");
+                            string arf = Console.ReadLine().ToUpper();
+                            if (arf == "Y")
+                            {
+                                Console.WriteLine("Address: ");
+                                tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Address = Console.ReadLine();
+                                Console.WriteLine("Phone: ");
+                                tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Phone = Console.ReadLine();
+                                Console.WriteLine("Salary: ");
+                                tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Money = Console.ReadLine();
+                                Console.WriteLine("Project: ");
+                                tree.Root.GetChild(0).GetChild(0).GetChild(0).Value.Project = Console.ReadLine();
+                            }
+                            tree.PrintDFS();
                         }
-                        Console.WriteLine("The Team leaders need project managers, we need to add some before adding team leader...");
-                        Console.WriteLine("name of project manager: ");
-                        string pname = Console.ReadLine();
-                        //Gets the root's first child and adds a child to it
-                        tree.Root.GetChild(0).AddChild(new TreeNode<Employee>(new Employee(pname)));
-                
-                    break;
-                case 4:
-                default:
-                    break;
+                       
+                            break;
+                        //senior
+                    case 4: 
+                        if(tree.Root.ChildrenCount == 0)
+                        {
+                            goto case 1;
+                        }
+                        if (tree.Root.GetChild(0).ChildrenCount == 0)
+                        {
+                            goto case 2;
+                        }
+                        if(tree.Root.GetChild(0).GetChild(0).ChildrenCount == 0)
+                        {
+                            goto case 3;
+                        }else
+                        {
+                            Console.WriteLine("Name of the senior: ");
+                            name = Console.ReadLine();
+                            tree.Root.GetChild(0).GetChild(0).GetChild(0).AddChild(new TreeNode<Employee>(new Employee(name)));
+                            tree.PrintDFS();
+                        }
+                        break;
+                    case 7:
+                        Console.WriteLine(tree.Root.Value.Address + tree.Root.Value.Phone + tree.Root.Value.Money);
+
+
+
+                        break;
+                    
+
+
+
+
+
+
+
+
+                        default: tree.PrintDFS();
+                            break;
+                    }
+
+
             }
-            Console.ReadKey();
-
-
+            while (opts != 0);
         }
     }
 }
