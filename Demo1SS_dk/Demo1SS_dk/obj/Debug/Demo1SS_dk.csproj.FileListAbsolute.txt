@@ -10,3 +10,9 @@ Z:\software\VS PROJECTS\NEW\testing\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.p
 Z:\software\VS PROJECTS\NEW\testing\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.csprojResolveAssemblyReference.cache
 Z:\software\VS PROJECTS\NEW\testing\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.exe
 Z:\software\VS PROJECTS\NEW\testing\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.pdb
+D:\demo1dk\testing\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.exe.config
+D:\demo1dk\testing\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.exe
+D:\demo1dk\testing\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.pdb
+D:\demo1dk\testing\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.exe
+D:\demo1dk\testing\Demo1SS_dk\Demo1SS_dk\bin\Debug\Demo1SS_dk.pdb
+D:\demo1dk\testing\Demo1SS_dk\Demo1SS_dk\obj\Debug\Demo1SS_dk.csprojResolveAssemblyReference.cache
